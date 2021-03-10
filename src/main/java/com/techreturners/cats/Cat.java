@@ -23,16 +23,53 @@
 
 
 package com.techreturners.cats;
+import java.awt.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+
 interface Cat {
     public void eat();
     public void sleep();
     public void run();
 }
 
-interface Cat {
-    let asleep = true;
+abstract class parentCat implements Cat{
+    Boolean asleep = true;
     int height_cm = 24;
-    String domOrWild = 'domestic or wild';
-    String wayOfSleeping = "curled up";
+    String domOrWild = "domestic, wild";
+    final ArrayList<String> setting = new 
+    ArrayList<>(Arrays.asList("domestic", "wild"));
+
+    public final void sleep() {
+    	 
+    }
 
 }
+
+class DomesticCat extends parentCat {
+
+    @Override
+    public void eat() {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void run() {
+        // TODO Auto-generated method stub
+        
+    }
+
+    public boolean isAsleep() {
+    
+        return this.asleep;
+        
+    }
+}
+
+
+// public void checkCatIsAwake() {
+//     Cat domesticCat = new DomesticCat();
+//     assertFalse("Cat should be awake by default", domesticCat.isAsleep());
+// }
